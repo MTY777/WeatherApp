@@ -3,10 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/matay/AndroidStudioProjects/WeatherApp/app/src/main/res/drawable/ic_air.xml" value="0.179" />
         <entry key="..\:/Users/matay/AndroidStudioProjects/WeatherApp/app/src/main/res/drawable/ic_arrow_down.xml" value="0.1625" />
+        <entry key="..\:/Users/matay/AndroidStudioProjects/WeatherApp/app/src/main/res/drawable/ic_circle_down.xml" value="0.179" />
         <entry key="..\:/Users/matay/AndroidStudioProjects/WeatherApp/app/src/main/res/drawable/ic_graphic.xml" value="0.1625" />
         <entry key="..\:/Users/matay/AndroidStudioProjects/WeatherApp/app/src/main/res/drawable/ic_hum.xml" value="0.1625" />
+        <entry key="..\:/Users/matay/AndroidStudioProjects/WeatherApp/app/src/main/res/drawable/ic_sun.xml" value="0.179" />
         <entry key="..\:/Users/matay/AndroidStudioProjects/WeatherApp/app/src/main/res/drawable/ic_sunny.xml" value="0.1625" />
+        <entry key="..\:/Users/matay/AndroidStudioProjects/WeatherApp/app/src/main/res/drawable/ic_time.xml" value="0.179" />
         <entry key="..\:/Users/matay/AndroidStudioProjects/WeatherApp/app/src/main/res/drawable/sky_background.xml" value="0.1625" />
         <entry key="..\:/Users/matay/AndroidStudioProjects/WeatherApp/app/src/main/res/layout/activity_main.xml" value="0.19010416666666666" />
         <entry key="..\:/Users/matay/AndroidStudioProjects/WeatherApp/app/src/main/res/layout/fragment_search.xml" value="0.20416666666666666" />
