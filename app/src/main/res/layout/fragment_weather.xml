@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.WeatherFragment">
+
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-40dp"
+        android:src="@drawable/ic_graphic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        app:cardCornerRadius="24dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="invisible" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_two"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="220dp"
+            android:layout_marginBottom="250dp"
+            android:backgroundTint="#ECF7FD"
+            app:cardCornerRadius="15dp">
+
+            <TextView
+                android:id="@+id/tv_city"
+                android:layout_width="96dp"
+                android:layout_height="19dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Bishkek"
+                android:textColor="#0DA0EA"
+                android:textSize="16sp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="179dp"
+            android:layout_height="17dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            android:text="Sunday, 19 May 2019  |  4:30PM"
+            android:textSize="14sp" />
+
+
+        <TextView
+            android:id="@+id/tv_gradus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="100dp"
+            android:text="33"
+            android:textColor="@color/black"
+            android:textSize="64sp" />
+
+        <TextView
+            android:id="@+id/tv_c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="210dp"
+            android:layout_marginTop="110dp"
+            android:text="\u00B0C"
+            android:textColor="#666666"
+            android:textSize="24sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="110dp"
+            android:src="@drawable/ic_sunny" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="145dp"
+            android:text="Sunny"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="120dp"
+            android:text="35\u00B0C"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="140dp"
+            android:text="27\u00B0C"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="335dp"
+            android:layout_marginTop="145dp"
+            android:src="@drawable/ic_arrow_down" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="335dp"
+            android:layout_marginTop="120dp"
+            android:src="@drawable/ic_arrow_up" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="200dp"
+            android:src="@drawable/ic_hum" />
+
+        <TextView
+            android:id="@+id/tv_hamidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="230dp"
+            android:text="49%"
+            android:textColor="#444444"
+            android:textSize="16sp" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="250dp"
+            android:text="humidity"
+            android:textSize="8sp" />
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="185dp"
+            android:layout_marginTop="200dp"
+            android:src="@drawable/ic_hum" />
+
+        <TextView
+            android:id="@+id/tv_pressure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="180dp"
+            android:layout_marginTop="230dp"
+            android:text="49%"
+            android:textColor="#444444"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="185dp"
+            android:layout_marginTop="250dp"
+            android:text="pressure"
+            android:textSize="8sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="200dp"
+            android:src="@drawable/ic_hum" />
+
+        <TextView
+            android:id="@+id/tv_wind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="230dp"
+            android:text="49%"
+            android:textColor="#444444"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="250dp"
+            android:text="wind"
+            android:textSize="8sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="300dp"
+            android:src="@drawable/ic_hum" />
+
+        <TextView
+            android:id="@+id/tv_sunsure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="330dp"
+            android:text="49%"
+            android:textColor="#444444"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="350dp"
+            android:text="sunrice"
+            android:textSize="8sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="185dp"
+            android:layout_marginTop="300dp"
+            android:src="@drawable/ic_hum" />
+
+        <TextView
+            android:id="@+id/tv_sunset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="185dp"
+            android:layout_marginTop="330dp"
+            android:text="49%"
+            android:textColor="#444444"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="185dp"
+            android:layout_marginTop="350dp"
+            android:text="sanset"
+            android:textSize="8sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="300dp"
+            android:src="@drawable/ic_hum" />
+
+        <TextView
+            android:id="@+id/tv_daytime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="330dp"
+            android:text="49%"
+            android:textColor="#444444"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="350dp"
+            android:text="daytime"
+            android:textSize="8sp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="95dp"
+            android:layout_height="101dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="380dp"
+            app:cardCornerRadius="24dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="-20dp"
+                android:src="@drawable/ic_sunny_w" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:text="MON, 21"
+                android:textColor="#444444"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="70dp"
+                android:text="35\u00B0C"
+                android:textSize="8sp" />
+
+            <ImageView
+                android:layout_width="7dp"
+                android:layout_height="9dp"
+                android:layout_marginStart="42dp"
+                android:layout_marginTop="70dp"
+                android:src="@drawable/ic_arrow_up" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="70dp"
+                android:text="26\u00B0C"
+                android:textSize="8sp" />
+
+            <ImageView
+                android:layout_width="7dp"
+                android:layout_height="9dp"
+                android:layout_marginStart="67dp"
+                android:layout_marginTop="70dp"
+                android:src="@drawable/ic_arrow_down" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="95dp"
+            android:layout_height="101dp"
+            android:layout_marginStart="160dp"
+            android:layout_marginTop="380dp"
+            app:cardCornerRadius="24dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="-20dp"
+                android:src="@drawable/ic_sunny_w" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:text="MON, 21"
+                android:textColor="#444444"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="70dp"
+                android:text="35\u00B0C"
+                android:textSize="8sp" />
+
+            <ImageView
+                android:layout_width="7dp"
+                android:layout_height="9dp"
+                android:layout_marginStart="42dp"
+                android:layout_marginTop="70dp"
+                android:src="@drawable/ic_arrow_up" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="70dp"
+                android:text="26\u00B0C"
+                android:textSize="8sp" />
+
+            <ImageView
+                android:layout_width="7dp"
+                android:layout_height="9dp"
+                android:layout_marginStart="67dp"
+                android:layout_marginTop="70dp"
+                android:src="@drawable/ic_arrow_down" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="95dp"
+            android:layout_height="101dp"
+            android:layout_marginStart="280dp"
+            android:layout_marginTop="380dp"
+            app:cardCornerRadius="24dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="-20dp"
+                android:src="@drawable/ic_sunny_w" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:text="MON, 21"
+                android:textColor="#444444"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="70dp"
+                android:text="35\u00B0C"
+                android:textSize="8sp" />
+
+            <ImageView
+                android:layout_width="7dp"
+                android:layout_height="9dp"
+                android:layout_marginStart="42dp"
+                android:layout_marginTop="70dp"
+                android:src="@drawable/ic_arrow_up" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="70dp"
+                android:text="26\u00B0C"
+                android:textSize="8sp" />
+
+            <ImageView
+                android:layout_width="7dp"
+                android:layout_height="9dp"
+                android:layout_marginStart="67dp"
+                android:layout_marginTop="70dp"
+                android:src="@drawable/ic_arrow_down" />
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
