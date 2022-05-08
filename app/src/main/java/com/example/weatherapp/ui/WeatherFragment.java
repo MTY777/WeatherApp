@@ -116,7 +116,7 @@ public class WeatherFragment extends BaseFragment<FragmentWeatherBinding> {
         binding.tvDaytime.setText(diti);
         binding.tvSunsure.setText(dete);
         binding.tvCity.setText(data.getSys().getCountry() + "," + data.getName());
-        binding.tvGradus.setText(String.valueOf(temps));
+        binding.tvGradus.setText(temps + "\\u00B0C");
         binding.tvHamidity.setText(data.getMain().getHumidity() + "%");
         binding.tvPressure.setText(nu + "mBar");
         binding.tvWind.setText(tem + "km/h");
