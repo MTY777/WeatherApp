@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface MainRepository {
 
-    MutableLiveData<Resource<MainResponse>> getWeather(String city);
+    MutableLiveData<Resource<MainResponse>> getWeather(String lat, String lon);
 
     LiveData<List<MainResponse>> getWeather();
 }

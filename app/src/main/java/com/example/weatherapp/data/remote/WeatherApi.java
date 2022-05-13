@@ -11,7 +11,8 @@ import retrofit2.http.Query;
 public interface WeatherApi {
 
     @GET("/data/2.5/weather")
-    Call<MainResponse> getDegree(@Query("q") String city
+    Call<MainResponse> getDegree(@Query("lat") String lat,
+                                 @Query("lon") String lon
             , @Query("appid") String apiKey
             , @Query("units") String units);
 

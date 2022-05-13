@@ -33,10 +33,10 @@ public class MainRepositoryImpl implements MainRepository {
 
 
     @Override
-    public MutableLiveData<Resource<MainResponse>> getWeather(String city) {
+    public MutableLiveData<Resource<MainResponse>> getWeather(String lat, String lon) {
         MutableLiveData<Resource<MainResponse>> liveData = new MutableLiveData<>();
         liveData.setValue(Resource.loading());
-        api.getDegree(city, "c4b856e328e10d6c2c32364cb631f932", "metric").enqueue(new Callback<MainResponse>() {
+        api.getDegree(lat, lon, "c4b856e328e10d6c2c32364cb631f932", "metric").enqueue(new Callback<MainResponse>() {
             @Override
             public void onResponse(Call<MainResponse> call, Response<MainResponse> response) {
                 if (response.isSuccessful() && response.body() != null) {
@@ -46,6 +46,7 @@ public class MainRepositoryImpl implements MainRepository {
                     liveData.setValue(Resource.error(response.message(), null));
                 }
             }
+
             @Override
             public void onFailure(Call<MainResponse> call, Throwable t) {
                 liveData.setValue(Resource.error(t.getLocalizedMessage(), null));

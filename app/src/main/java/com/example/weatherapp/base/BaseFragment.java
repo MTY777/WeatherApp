@@ -13,12 +13,17 @@ import androidx.navigation.Navigation;
 import androidx.viewbinding.ViewBinding;
 
 import com.example.weatherapp.R;
+import com.google.android.gms.maps.GoogleMap;
+
 
 public abstract class BaseFragment<T extends ViewBinding> extends Fragment {
 
     protected T binding;
 
+    public abstract void onMapReady(@NonNull GoogleMap googleMap);
+
     protected abstract T bind();
+
 
     protected NavController navController;
 

@@ -1,5 +1,6 @@
 package com.example.weatherapp.ui;
 
+import androidx.annotation.Nullable;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
@@ -28,7 +29,7 @@ public class FragmentWeatherViewModel extends ViewModel {
         this.mainRepository = mainRepository;
     }
 
-    public void getWeatherById(String city) {
-        liveData = mainRepository.getWeather(city);
+    public void getWeatherById(@Nullable String lat, String lon) {
+        liveData = mainRepository.getWeather(lat, lon);
     }
 }

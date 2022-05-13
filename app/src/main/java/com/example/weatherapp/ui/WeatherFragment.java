@@ -3,22 +3,28 @@ package com.example.weatherapp.ui;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
 import com.example.weatherapp.R;
+
+
 import com.example.weatherapp.base.BaseFragment;
-
 import com.example.weatherapp.data.model.MainResponse;
-
 import com.example.weatherapp.databinding.FragmentWeatherBinding;
+import com.google.android.gms.maps.GoogleMap;
 
+
+import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.List;
 import java.util.Locale;
-import java.util.Objects;
+
 
 import dagger.hilt.android.AndroidEntryPoint;
 
@@ -29,7 +35,13 @@ public class WeatherFragment extends BaseFragment<FragmentWeatherBinding> {
     private FragmentWeatherViewModel viewModel;
 
     @Override
-    protected FragmentWeatherBinding bind() {
+    public void onMapReady(@NonNull GoogleMap googleMap) {
+
+    }
+
+    @Override
+    protected @NonNull
+    FragmentWeatherBinding bind() {
         return FragmentWeatherBinding.inflate(getLayoutInflater());
     }
 
@@ -47,7 +59,7 @@ public class WeatherFragment extends BaseFragment<FragmentWeatherBinding> {
 
     @Override
     protected void callRequests() {
-        viewModel.getWeatherById(args.getCity());
+        viewModel.getWeatherById(args.getLatitude(), args.getLongitude());
     }
 
     @Override
@@ -75,8 +87,6 @@ public class WeatherFragment extends BaseFragment<FragmentWeatherBinding> {
                     binding.cardView.setVisibility(View.GONE);
                     binding.cardViewTwo.setVisibility(View.GONE);
                     binding.imageView.setVisibility(View.GONE);
-
-
                     Toast.makeText(requireActivity(), "Загрузка", Toast.LENGTH_SHORT).show();
                     break;
                 }
@@ -86,7 +96,6 @@ public class WeatherFragment extends BaseFragment<FragmentWeatherBinding> {
                     binding.cardViewTwo.setVisibility(View.VISIBLE);
                     binding.imageView.setVisibility(View.VISIBLE);
                     binds(mainResponseResource.data);
-
                     break;
                 }
             }
@@ -94,9 +103,13 @@ public class WeatherFragment extends BaseFragment<FragmentWeatherBinding> {
     }
 
     private void localBind() {
-        viewModel.localLiveData.observe(getViewLifecycleOwner(), mainResponses -> {
-            binds(mainResponses.get(mainResponses.size()-1));
-        });
+    /*    viewModel.localLiveData.observe(getViewLifecycleOwner(), mainResponses -> {
+            try {
+                binds(mainResponses.get(mainResponses.size() - 1));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });*/
     }
 
     private void binds(MainResponse data) {
@@ -106,6 +119,7 @@ public class WeatherFragment extends BaseFragment<FragmentWeatherBinding> {
         int tem = (int) tempe;
         double nu = num;
         int temps = (int) temp;
+        String getCityName = data.getSys().getCountry();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm", Locale.ROOT);
         SimpleDateFormat simpleDeteFormat = new SimpleDateFormat("HH:mm", Locale.ROOT);
         SimpleDateFormat simpleDataFormat = new SimpleDateFormat("HH:mm", Locale.ROOT);
@@ -115,8 +129,9 @@ public class WeatherFragment extends BaseFragment<FragmentWeatherBinding> {
         binding.tvSunset.setText(date);
         binding.tvDaytime.setText(diti);
         binding.tvSunsure.setText(dete);
-        binding.tvCity.setText(data.getSys().getCountry() + "," + data.getName());
-        binding.tvGradus.setText(temps + "\\u00B0C");
+//        binding.tvCity.setText(data.getSys().getCountry() + "," + data.getName());
+        binding.tvCity.setText(getCityName);
+        binding.tvGradus.setText(temps + "\u00B0c");
         binding.tvHamidity.setText(data.getMain().getHumidity() + "%");
         binding.tvPressure.setText(nu + "mBar");
         binding.tvWind.setText(tem + "km/h");
