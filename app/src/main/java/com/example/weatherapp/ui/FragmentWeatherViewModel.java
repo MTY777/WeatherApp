@@ -18,11 +18,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel;
 public class FragmentWeatherViewModel extends ViewModel {
     public LiveData<Resource<MainResponse>> liveData;
     private MainRepositoryImpl mainRepository;
-    public LiveData<List<MainResponse>> localLiveData;
 
-    public void getWeather() {
-        localLiveData = mainRepository.getWeather();
-    }
 
     @Inject
     public FragmentWeatherViewModel(MainRepositoryImpl mainRepository) {
@@ -31,5 +27,8 @@ public class FragmentWeatherViewModel extends ViewModel {
 
     public void getWeatherById(@Nullable String lat, String lon) {
         liveData = mainRepository.getWeather(lat, lon);
+    }
+    public List<MainResponse> getWeatherFromRoom(){
+        return mainRepository.getWeatherRoom();
     }
 }

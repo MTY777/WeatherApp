@@ -56,7 +56,11 @@ public class MainRepositoryImpl implements MainRepository {
     }
 
     @Override
-    public LiveData<List<MainResponse>> getWeather() {
-        return dao.setAll();
+    public LiveData<List<MainResponse>> getWeather(List<MainResponse> mainResponses) {
+        return null;
+    }
+
+    public List<MainResponse> getWeatherRoom() {
+        return dao.getAll();
     }
 }

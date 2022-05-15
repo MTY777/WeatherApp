@@ -12,5 +12,5 @@ public interface MainRepository {
 
     MutableLiveData<Resource<MainResponse>> getWeather(String lat, String lon);
 
-    LiveData<List<MainResponse>> getWeather();
+    LiveData<List<MainResponse>> getWeather(List<MainResponse> mainResponses);
 }

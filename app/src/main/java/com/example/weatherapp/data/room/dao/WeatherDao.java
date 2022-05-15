@@ -16,7 +16,7 @@ public interface WeatherDao {
     void insert(MainResponse mainResponse);
 
     @Query("SELECT * FROM mainresponse")
-    LiveData<List<MainResponse>> setAll();
+    List<MainResponse> getAll();
 
 
 }
